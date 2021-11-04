@@ -9,12 +9,12 @@ import { Text, View } from './Themed';
 export default function EditScreenInfo({ path }: { path: string }) {
   return (
     <View>
-      <View style={styles.getStartedContainer}>
+      <View style={styles.titleLoginContainer}>
         <Text
-          style={styles.getStartedText}
+          style={styles.titleLoginText}
           lightColor="rgba(0,0,0,0.8)"
           darkColor="rgba(255,255,255,0.8)">
-          Open up the code for this screen:
+          Check Yourself
         </Text>
 
         <View
@@ -25,7 +25,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
         </View>
 
         <Text
-          style={styles.getStartedText}
+          style={styles.titleLoginText}
           lightColor="rgba(0,0,0,0.8)"
           darkColor="rgba(255,255,255,0.8)">
           Change any of the text, save the file, and your app will automatically update.
@@ -50,7 +50,7 @@ function handleHelpPress() {
 }
 
 const styles = StyleSheet.create({
-  getStartedContainer: {
+  titleLoginContainer: {
     alignItems: 'center',
     marginHorizontal: 50,
   },
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     paddingHorizontal: 4,
   },
-  getStartedText: {
+  titleLoginText: {
     fontSize: 17,
     lineHeight: 24,
     textAlign: 'center',
