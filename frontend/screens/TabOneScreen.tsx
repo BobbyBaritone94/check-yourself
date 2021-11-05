@@ -4,21 +4,28 @@ import { StyleSheet,ImageBackground } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
+import { TitleBox } from './Home_Comps/TitleBox';
+import { LoginBox } from './Home_Comps/LoginBox';
+import { Register } from './Home_Comps/Register';
+import { ForgotLogin } from './Home_Comps/ForgotLogin';
 
 
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
 
+
+  //title component
+  //login component
+  //register / forgot login
+
   return (
-   
       <View style={styles.container}>
-        <ImageBackground source = {require('../assets/images/comp-book-1.png')}>
-          <View style={styles.titleContainer}>
-            <Text style={styles.title}>Check</Text>
-            <Text style={styles.title}>Yourself</Text>
-            <Text style={styles.subTitle}>A Wellness App</Text>
-          </View>
-            <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+        <ImageBackground style={styles.imageContainer} source = {require('../assets/images/comp-book-1.png')}>
+          <TitleBox title='Check Yourself' subtitle="A Wellness App"/>
+          <LoginBox/>
+          <Register/>
+          <ForgotLogin/>
+            {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
             {/* <EditScreenInfo path="/screens/TabOneScreen.tsx" /> */}
         </ImageBackground>
       </View>
@@ -27,32 +34,16 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    borderColor: 'white',
-    borderWidth: 8,
-    borderRadius: 20,
-    width: '70vw',
-    flex: 0.5,
-    justifyContent: 'center'
+  imageContainer: {
+    flex: 1,
+    width: '100vw',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
   },
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  title: {
-    fontFamily: 'Schoolbell',
-    fontSize: 50,
-    textDecorationLine: 'underline',
-    fontWeight: 'bold',
-    textAlign: 'center'
-  },
-  subTitle: {
-    fontFamily: 'Schoolbell',
-    fontSize: 20,
-    textDecorationLine: 'underline',
-    fontWeight: 'bold',
-    textAlign: 'center'
   },
   separator: {
     marginVertical: 30,
